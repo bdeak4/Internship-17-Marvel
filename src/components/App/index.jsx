@@ -1,7 +1,13 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Characters from "../Characters";
 
 const App = () => {
-  return <div>app</div>;
-}
+  return (
+    <BrowserRouter>
+      <Characters />
+    </BrowserRouter>
+  );
+};
 
 export default App;

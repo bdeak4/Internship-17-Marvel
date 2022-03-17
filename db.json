@@ -1,0 +1,11 @@
+{
+  "character": [
+    {
+      "id": 1,
+      "name": "Peter Parker",
+      "alias": "Spiderman",
+      "favorite": false,
+      "age": 26
+    }
+  ]
+}
