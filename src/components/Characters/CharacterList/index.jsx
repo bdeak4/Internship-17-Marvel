@@ -19,11 +19,12 @@ const CharacterList = () => {
     <div>
       {characters.map((character) => (
         <CharacterListItem key={character.id}>
-          <Link to={`${route.characters}/${character.id}`}>
+          <Link to={`${route.characterDetails}/${character.id}`}>
             {character.alias}
           </Link>
         </CharacterListItem>
       ))}
+
       <Link to={route.characterAdd}>
         <button>Add new character</button>
       </Link>

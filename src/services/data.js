@@ -5,8 +5,8 @@ const apiUrl = "http://localhost:3001/characters";
 export const getCharacters = async () =>
   await axios.get(apiUrl).then((response) => response.data);
 
-export const getCharacterDetails = async (character) =>
-  await axios.get(`${apiUrl}/${character}`).then((response) => response.data);
+export const getCharacterDetails = async (characterId) =>
+  await axios.get(`${apiUrl}/${characterId}`).then((response) => response.data);
 
 export const addCharacter = async (character) =>
   await axios.post(apiUrl, character).then((response) => response.data);
