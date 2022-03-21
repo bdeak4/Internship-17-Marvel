@@ -19,7 +19,9 @@ const CharacterEdit = () => {
   }
 
   const handleCharacterSubmit = (character) => {
-    updateCharacter(character).then(() => navigate(route.characters));
+    updateCharacter(character).then(() =>
+      navigate(`${route.characterDetails}/${id}`)
+    );
   };
 
   return (

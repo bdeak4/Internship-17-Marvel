@@ -1,22 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import route from "../../../constants/route";
-import { Button, ButtonGroup, Input, Label } from "./../../styled";
+import { Button, ButtonGroup, Input, InputGroup, Label } from "./../../styled";
 
 const CharacterForm = ({ character, handleSubmit }) => {
   const [name, setName] = useState(character?.name || "");
   const [alias, setAlias] = useState(character?.alias || "");
   const [favorite, setFavorite] = useState(character?.favorite || false);
-  const [age, setAge] = useState(character?.age);
+  const [age, setAge] = useState(character?.age || "");
 
   const onSubmit = (event) => {
     event.preventDefault();
 
     const submitCharacter = {
-      name,
-      alias,
+      name: name.trim(),
+      alias: alias.trim(),
       favorite,
-      age,
+      age: parseInt(age),
     };
     if (character) {
       submitCharacter.id = character.id;
@@ -43,18 +43,20 @@ const CharacterForm = ({ character, handleSubmit }) => {
         required
       />
 
-      <Label>Favorite</Label>
-      <Input
-        type="checkbox"
-        value={favorite}
-        onChange={(e) => setFavorite(e.target.checked)}
-      />
+      <InputGroup>
+        <Input
+          type="checkbox"
+          value={favorite}
+          onChange={(e) => setFavorite(e.target.checked)}
+        />
+        <Label>Favorite</Label>
+      </InputGroup>
 
       <Label>Age</Label>
       <Input
         type="number"
         value={age}
-        onChange={(e) => setAge(parseInt(e.target.value))}
+        onChange={(e) => setAge(e.target.value)}
         min="1"
         required
       />

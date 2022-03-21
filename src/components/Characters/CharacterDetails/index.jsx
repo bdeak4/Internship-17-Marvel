@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import route from "../../../constants/route";
 import Loading from "../../../Loading";
-import { getCharacterDetails } from "../../../services/data";
+import { deleteCharacter, getCharacterDetails } from "../../../services/data";
 import { Button, ButtonGroup } from "../../styled";
 import { CharacterProperty } from "./styled";
 
 const CharacterDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [character, setCharacter] = useState(null);
 
   useEffect(() => {
@@ -17,6 +18,13 @@ const CharacterDetails = () => {
   if (!character) {
     return <Loading />;
   }
+
+  const handleDeleteCharacter = () => {
+    // eslint-disable-next-line no-restricted-globals
+    if (confirm("Are you sure?")) {
+      deleteCharacter(character).then(() => navigate(route.characters));
+    }
+  };
 
   return (
     <div>
@@ -41,8 +49,8 @@ const CharacterDetails = () => {
             Edit character
           </Link>
         </Button>
-        <Button>
-          <Link to={route.characters}>Delete character</Link>
+        <Button onClick={handleDeleteCharacter}>
+          <span>Delete character</span>
         </Button>
       </ButtonGroup>
     </div>
