@@ -4,7 +4,7 @@ import { getCharacters } from "../../../services/data";
 import route from "../../../constants/route";
 import { CharacterListItem } from "./styled";
 import { Button, ButtonGroup, Input } from "../../styled";
-import Loading from "../../../Loading";
+import Loading from "../../Loading";
 
 const CharacterList = () => {
   const [characters, setCharacters] = useState(null);

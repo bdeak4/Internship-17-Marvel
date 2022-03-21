@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import route from "../../../constants/route";
-import Loading from "../../../Loading";
+import Loading from "../../Loading";
 import {
   deleteCharacter,
   getCharacterDetails,

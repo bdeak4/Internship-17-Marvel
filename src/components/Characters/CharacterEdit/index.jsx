@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getCharacterDetails, updateCharacter } from "../../../services/data";
 import route from "../../../constants/route";
 import CharacterForm from "../CharacterForm";
-import Loading from "../../../Loading";
+import Loading from "../../Loading";
 
 const CharacterEdit = () => {
   const { id } = useParams();

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import route from "../../../constants/route";
 import { Button } from "../../styled";
 import { getCharacters, updateCharacter } from "../../../services/data";
-import Loading from "../../../Loading";
+import Loading from "../../Loading";
 import { CharacterListItem } from "../CharacterList/styled";
 import { FavoriteCharacterListItem } from "./styled";
 
