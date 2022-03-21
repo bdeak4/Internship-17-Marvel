@@ -8,10 +8,6 @@ export const CharacterListItem = styled.div`
 
   &:hover {
     background-color: orangered;
-
-    a {
-      color: #fff;
-    }
   }
 
   &:not(:last-child) {
