@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import route from "../../../constants/route";
 import Loading from "../../../Loading";
-import { deleteCharacter, getCharacterDetails } from "../../../services/data";
+import {
+  deleteCharacter,
+  getCharacterDetails,
+  updateCharacter,
+} from "../../../services/data";
 import { Button, ButtonGroup } from "../../styled";
 import { CharacterProperty } from "./styled";
 
@@ -18,6 +22,20 @@ const CharacterDetails = () => {
   if (!character) {
     return <Loading />;
   }
+
+  const handleAddToFavorites = () => {
+    updateCharacter({
+      ...character,
+      favorite: true,
+    }).then(() => navigate(route.characterFavorite));
+  };
+
+  const handleRemoveFromFavorites = () => {
+    updateCharacter({
+      ...character,
+      favorite: false,
+    }).then(() => navigate(route.characters));
+  };
 
   const handleDeleteCharacter = () => {
     // eslint-disable-next-line no-restricted-globals
@@ -41,9 +59,17 @@ const CharacterDetails = () => {
         <Button>
           <Link to={route.characters}>&larr; Back to list of characters</Link>
         </Button>
-        <Button>
-          <Link to={route.characters}>Add to favorites</Link>
-        </Button>
+
+        {character.favorite ? (
+          <Button onClick={handleRemoveFromFavorites}>
+            <span>Remove from favorites</span>
+          </Button>
+        ) : (
+          <Button onClick={handleAddToFavorites}>
+            <span>Add to favorites</span>
+          </Button>
+        )}
+
         <Button>
           <Link to={`${route.characterEdit}/${character.id}`}>
             Edit character

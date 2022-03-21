@@ -3,6 +3,7 @@ const route = {
   characterDetails: "/characters",
   characterAdd: "/characters/add",
   characterEdit: "/characters/edit",
+  characterFavorite: "/characters/favorite",
   notFound: "/not-found",
 };
 

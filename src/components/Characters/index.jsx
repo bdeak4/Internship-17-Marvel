@@ -4,6 +4,7 @@ import NotFound from "../NotFound";
 import CharacterAdd from "./CharacterAdd";
 import CharacterDetails from "./CharacterDetails";
 import CharacterEdit from "./CharacterEdit";
+import CharacterFavorite from "./CharacterFavorite";
 import CharacterList from "./CharacterList";
 
 const Characters = () => {
@@ -17,6 +18,7 @@ const Characters = () => {
       />
       <Route path={`${route.characterEdit}/:id`} element={<CharacterEdit />} />
       <Route path={route.characterAdd} element={<CharacterAdd />} />
+      <Route path={route.characterFavorite} element={<CharacterFavorite />} />
       <Route path={route.notFound} element={<NotFound />} />
       <Route path="*" element={<Navigate to={route.notFound} />} />
     </Routes>

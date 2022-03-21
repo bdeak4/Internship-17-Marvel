@@ -41,7 +41,7 @@ const CharacterList = () => {
           <Link to={route.characterAdd}>Add new character</Link>
         </Button>
         <Button>
-          <Link to={route.characterAdd}>Favorite characters</Link>
+          <Link to={route.characterFavorite}>Favorite characters</Link>
         </Button>
         <Input
           type="text"
