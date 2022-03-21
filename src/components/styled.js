@@ -7,12 +7,14 @@ export const Button = styled.button`
   border-radius: 8px;
   transition: background-color 200ms ease-out;
   border: 0;
+  cursor: pointer;
 
   &:hover {
     background-color: orangered;
   }
 
-  a {
+  a,
+  span {
     text-decoration: none;
     display: block;
     padding: 10px 12px;

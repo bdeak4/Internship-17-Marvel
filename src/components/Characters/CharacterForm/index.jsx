@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Input, Label } from "./../../styled";
+import { Link } from "react-router-dom";
+import route from "../../../constants/route";
+import { Button, ButtonGroup, Input, Label } from "./../../styled";
 
 const CharacterForm = ({ character, handleSubmit }) => {
   const [name, setName] = useState(character?.name || "");
@@ -57,7 +59,14 @@ const CharacterForm = ({ character, handleSubmit }) => {
         required
       />
 
-      <button type="submit">Submit</button>
+      <ButtonGroup>
+        <Button>
+          <Link to={route.characters}>&larr; Back to list of characters</Link>
+        </Button>
+        <Button type="submit">
+          <span>Submit</span>
+        </Button>
+      </ButtonGroup>
     </form>
   );
 };

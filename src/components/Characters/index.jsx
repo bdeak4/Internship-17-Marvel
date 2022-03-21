@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import route from "../../constants/route";
 import NotFound from "../NotFound";
+import CharacterAdd from "./CharacterAdd";
 import CharacterDetails from "./CharacterDetails";
 import CharacterEdit from "./CharacterEdit";
 import CharacterList from "./CharacterList";
@@ -15,7 +16,7 @@ const Characters = () => {
         element={<CharacterDetails />}
       />
       <Route path={`${route.characterEdit}/:id`} element={<CharacterEdit />} />
-      {/* <Route path={route.characterAdd} element={<CharacterAdd />} /> */}
+      <Route path={route.characterAdd} element={<CharacterAdd />} />
       <Route path={route.notFound} element={<NotFound />} />
       <Route path="*" element={<Navigate to={route.notFound} />} />
     </Routes>

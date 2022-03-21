@@ -37,7 +37,9 @@ const CharacterDetails = () => {
           <Link to={route.characters}>Add to favorites</Link>
         </Button>
         <Button>
-          <Link to={route.characters}>Update character</Link>
+          <Link to={`${route.characterEdit}/${character.id}`}>
+            Edit character
+          </Link>
         </Button>
         <Button>
           <Link to={route.characters}>Delete character</Link>
