@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import route from "../../../constants/route";
+import Loading from "../../../Loading";
 import { getCharacterDetails } from "../../../services/data";
 import { Button, ButtonGroup } from "../../styled";
 import { CharacterProperty } from "./styled";
@@ -14,7 +15,7 @@ const CharacterDetails = () => {
   }, [id]);
 
   if (!character) {
-    return <div>loading...</div>;
+    return <Loading />;
   }
 
   return (

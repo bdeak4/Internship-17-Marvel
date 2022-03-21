@@ -17,7 +17,6 @@ export const Button = styled.button`
     display: block;
     padding: 10px 12px;
     color: #000;
-    transition: color 200ms ease-out;
   }
 `;
 

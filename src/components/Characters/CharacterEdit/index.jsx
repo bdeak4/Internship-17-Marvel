@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getCharacterDetails, updateCharacter } from "../../../services/data";
 import route from "../../../constants/route";
 import CharacterForm from "../CharacterForm";
+import Loading from "../../../Loading";
 
 const CharacterEdit = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const CharacterEdit = () => {
   }, [id]);
 
   if (!character) {
-    return <div>loading...</div>;
+    return <Loading />;
   }
 
   const handleCharacterSubmit = (character) => {

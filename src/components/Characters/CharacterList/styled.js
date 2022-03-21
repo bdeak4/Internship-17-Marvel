@@ -18,6 +18,5 @@ export const CharacterListItem = styled.div`
     color: #000;
     padding: 16px;
     display: block;
-    transition: color 200ms ease-out;
   }
 `;
